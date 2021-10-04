@@ -4,7 +4,7 @@ import asyncio
 from bs4 import BeautifulSoup
 
 
-async def weather_request():
+async def covid_request():
     async with aiohttp.ClientSession() as session:
         url = "https://стопкоронавирус.рф/information/"
         async with session.get(url, ssl=False) as response:
@@ -30,4 +30,4 @@ async def weather_request():
             return covid
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(weather_request())
+loop.run_until_complete(covid_request())
