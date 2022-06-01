@@ -26,8 +26,14 @@ async def covid_request():
 
             covid = f'Прирост за день:\n{day}\nОбщее число заражений:\n{total}\nВ Краснодарском крае:\n{reg}'
 
-            # print(covid)
+            print(covid)
             return covid
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(covid_request())
+
+async def request():
+    task = asyncio.create_task(covid_request())
+    await task
+    await asyncio.sleep(0.1)
+
+
+asyncio.run(request())
