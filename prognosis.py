@@ -26,7 +26,7 @@ async def covid_request():
 
             covid = f'Прирост за день:\n{day}\nОбщее число заражений:\n{total}\nВ Краснодарском крае:\n{reg}'
 
-            print(covid)
+            # print(covid)
             return covid
 
 
